@@ -10,6 +10,7 @@
     <Title>Plotmark Forecast</Title>
     <Description>Pre-built ML models for fantasy football predictions.</Description>
     <IsPackable>true</IsPackable>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
   </PropertyGroup>
 
   <ItemGroup>
