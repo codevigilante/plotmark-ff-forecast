@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>plotmark.forecast</RootNamespace>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+    <PackageId>plotmark-forecast</PackageId>
+    <PackageVersion>0.1.0</PackageVersion>
+    <Version>0.1.0</Version>
+    <Title>Plotmark Forecast</Title>
+    <Description>Pre-built ML models for fantasy football predictions.</Description>
+    <IsPackable>true</IsPackable>
+    <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.ML" Version="1.4.0" />
+  </ItemGroup>
+
+</Project>
