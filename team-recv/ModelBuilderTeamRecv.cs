@@ -1,12 +1,13 @@
 using System;
 using System.IO;
+using System.Reflection;
 using Microsoft.ML;
+using Microsoft.Extensions.FileProviders;
 
 namespace plotmark.teamrecv
 {
     public class ModelBuilderTeamRecv
     {
-        private const string MODEL_FILEPATH = @"./team-recv/MLModel.zip";
         private PredictionEngine<TeamRecvModelInput, TeamRecvModelOutput> Engine = null;
 
         public ModelBuilderTeamRecv()
@@ -16,9 +17,21 @@ namespace plotmark.teamrecv
         public void LoadModel()
         {
             MLContext mlContext = new MLContext();
-            ITransformer mlModel = mlContext.Model.Load(MODEL_FILEPATH, out DataViewSchema inputSchema);
+            var assembly = Assembly.GetAssembly(typeof(plotmark.Forecaster));   
 
-            Engine = mlContext.Model.CreatePredictionEngine<TeamRecvModelInput, TeamRecvModelOutput>(mlModel);
+            /*Console.WriteLine("{0}", assembly.FullName);
+
+            foreach(string resource in assembly.GetManifestResourceNames())
+            {
+                Console.WriteLine("RESOURCE: {0}", resource);
+            }*/
+
+            using(var reader = assembly.GetManifestResourceStream("plotmark.forecast.team_recv.MLModel.zip"))
+            {
+                ITransformer mlModel = mlContext.Model.Load(reader, out DataViewSchema inputSchema);
+
+                Engine = mlContext.Model.CreatePredictionEngine<TeamRecvModelInput, TeamRecvModelOutput>(mlModel);
+            }            
         }
 
         public TeamRecvModelOutput Forecast(TeamRecvModelInput input)
