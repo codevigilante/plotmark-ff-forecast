@@ -4,12 +4,12 @@ using System.Reflection;
 using Microsoft.ML;
 using Microsoft.Extensions.FileProviders;
 
-namespace plotmark.teamrecv
+namespace plotmark.teamrush
 {
     public class ModelBuilderTeamRush
     {
-        private PredictionEngine<TeamRecvModelInput, TeamRecvModelOutput> Engine = null;
-        private const string ModelPath = "plotmark.forecast.team_recv.MLModel.zip";
+        private PredictionEngine<TeamRushModelInput, TeamRushModelOutput> Engine = null;
+        private const string ModelPath = "plotmark.forecast.team_rush.MLModel.zip";
 
         public ModelBuilderTeamRush()
         {
@@ -24,11 +24,11 @@ namespace plotmark.teamrecv
             {
                 ITransformer mlModel = mlContext.Model.Load(reader, out DataViewSchema inputSchema);
 
-                Engine = mlContext.Model.CreatePredictionEngine<TeamRecvModelInput, TeamRecvModelOutput>(mlModel);
+                Engine = mlContext.Model.CreatePredictionEngine<TeamRushModelInput, TeamRushModelOutput>(mlModel);
             }            
         }
 
-        public TeamRecvModelOutput Forecast(TeamRecvModelInput input)
+        public TeamRushModelOutput Forecast(TeamRushModelInput input)
         {
             if (Engine == null)
             {
@@ -36,7 +36,7 @@ namespace plotmark.teamrecv
             }         
 
             // Try a single prediction
-            TeamRecvModelOutput predictionResult = Engine.Predict(input);
+            TeamRushModelOutput predictionResult = Engine.Predict(input);
 
             return(predictionResult);
         }
