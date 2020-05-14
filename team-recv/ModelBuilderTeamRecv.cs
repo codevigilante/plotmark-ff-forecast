@@ -6,12 +6,12 @@ using Microsoft.Extensions.FileProviders;
 
 namespace plotmark.teamrecv
 {
-    public class ModelBuilderTeamRush
+    public class ModelBuilderTeamRecv
     {
         private PredictionEngine<TeamRecvModelInput, TeamRecvModelOutput> Engine = null;
         private const string ModelPath = "plotmark.forecast.team_recv.MLModel.zip";
 
-        public ModelBuilderTeamRush()
+        public ModelBuilderTeamRecv()
         {
         }
 

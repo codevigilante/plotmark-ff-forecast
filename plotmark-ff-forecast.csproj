@@ -5,8 +5,8 @@
     <RootNamespace>plotmark.forecast</RootNamespace>
     <PackageOutputPath>./nupkg</PackageOutputPath>
     <PackageId>plotmark-forecast</PackageId>
-    <PackageVersion>0.4.0</PackageVersion>
-    <Version>0.4.0</Version>
+    <PackageVersion>0.5.0</PackageVersion>
+    <Version>0.5.0</Version>
     <Title>Plotmark Forecast</Title>
     <Description>Pre-built ML models for fantasy football predictions.</Description>
     <IsPackable>true</IsPackable>
