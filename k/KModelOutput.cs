@@ -7,9 +7,9 @@
 using System;
 using Microsoft.ML.Data;
 
-namespace plotmark.teamrecv
+namespace plotmark.k
 {
-    public class TeamRecvModelOutput
+    public class KModelOutput
     {
         public float Score { get; set; }
     }

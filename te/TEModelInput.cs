@@ -4,13 +4,25 @@
 //*                                                                                       *
 //*****************************************************************************************
 
-using System;
 using Microsoft.ML.Data;
 
-namespace plotmark.teamrecv
+namespace plotmark.te
 {
-    public class TeamRecvModelOutput
+    public class TEModelInput
     {
-        public float Score { get; set; }
+        [ColumnName("ExpectedFPShare"), LoadColumn(0)]
+        public float ExpectedFPShare { get; set; }
+
+
+        [ColumnName("TargetPercentPerGame"), LoadColumn(1)]
+        public float TargetPercentPerGame { get; set; }
+
+
+        [ColumnName("ExpectedPlayerFP"), LoadColumn(2)]
+        public float ExpectedPlayerFP { get; set; }
+
+
+        [ColumnName("FP"), LoadColumn(3)]
+        public float FP { get; set; }
     }
 }
