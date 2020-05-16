@@ -7,9 +7,9 @@
 using System;
 using Microsoft.ML.Data;
 
-namespace plotmark.teamrecv
+namespace plotmark.qb
 {
-    public class TeamRecvModelOutput
+    public class QBModelOutput
     {
         public float Score { get; set; }
     }

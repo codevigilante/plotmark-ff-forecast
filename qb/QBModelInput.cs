@@ -6,47 +6,47 @@
 
 using Microsoft.ML.Data;
 
-namespace plotmark.teamrecv
+namespace plotmark.qb
 {
-    public class TeamRecvModelInput
-    {
-        [ColumnName("AvgPassYards"), LoadColumn(0)]
-        public float AvgPassYards { get; set; }
+        public class QBModelInput
+        {
+        [ColumnName("IsWeek17"), LoadColumn(0)]
+        public bool IsWeek17 { get; set; }
 
 
-        [ColumnName("PassRatioOverAvg"), LoadColumn(1)]
+        [ColumnName("AvgFP"), LoadColumn(1)]
+        public float AvgFP { get; set; }
+
+
+        [ColumnName("PassRatioOverAvg"), LoadColumn(2)]
         public float PassRatioOverAvg { get; set; }
 
 
-        [ColumnName("TeamExpectedPoints"), LoadColumn(2)]
+        [ColumnName("TeamExpectedPoints"), LoadColumn(3)]
         public float TeamExpectedPoints { get; set; }
 
 
-        [ColumnName("AvgRushAttempts"), LoadColumn(3)]
+        [ColumnName("AvgRushAttempts"), LoadColumn(4)]
         public float AvgRushAttempts { get; set; }
 
 
-        [ColumnName("AvgTeamPoints"), LoadColumn(4)]
+        [ColumnName("AvgTeamPoints"), LoadColumn(5)]
         public float AvgTeamPoints { get; set; }
 
 
-        [ColumnName("WindSpeed"), LoadColumn(5)]
+        [ColumnName("WindSpeed"), LoadColumn(6)]
         public float WindSpeed { get; set; }
 
 
-        [ColumnName("PointsFavored"), LoadColumn(6)]
+        [ColumnName("PointsFavored"), LoadColumn(7)]
         public float PointsFavored { get; set; }
 
 
-        [ColumnName("GamesPlayedPreviousSeason"), LoadColumn(7)]
+        [ColumnName("GamesPlayedPreviousSeason"), LoadColumn(8)]
         public float GamesPlayedPreviousSeason { get; set; }
 
 
-        [ColumnName("IsWeek17"), LoadColumn(8)]
-        public float IsWeek17 { get; set; }
-
-
-        [ColumnName("TotalReceivingFP"), LoadColumn(9)]
-        public float TotalReceivingFP { get; set; }
+        [ColumnName("FP"), LoadColumn(9)]
+        public float FP { get; set; }
     }
 }

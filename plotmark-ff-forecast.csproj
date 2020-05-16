@@ -21,6 +21,14 @@
   <ItemGroup>
     <EmbeddedResource Include="team-recv\MLModel.zip" />
     <EmbeddedResource Include="team-rush\MLModel.zip" />
+    <EmbeddedResource Include="qb\MLModel.zip" />
+    <EmbeddedResource Include="rb\MLModel.zip" />
+    <EmbeddedResource Include="dst\MLModel.zip" />
+    <EmbeddedResource Include="k\MLModel.zip" />
+    <EmbeddedResource Include="te\MLModel.zip" />
+    <EmbeddedResource Include="wr\wr1\MLModel.zip" />
+    <EmbeddedResource Include="wr\wr2\MLModel.zip" />
+    <EmbeddedResource Include="wr\wr3\MLModel.zip" />
   </ItemGroup>
 
 </Project>
